@@ -7,6 +7,6 @@ namespace MathEngine.Core
 {
     public interface IScalarCalculator
     {
-        long Calculate(long arg);
+        double Calculate(double arg);
     }
 }
