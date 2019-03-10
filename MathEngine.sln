@@ -7,10 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathEngine.Core", "MathEngi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathEngine.Test", "MathEngine.Test\MathEngine.Test.csproj", "{969B3FE0-4371-44F2-8292-C83AADF7F50A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pipelines", "Pipelines", "{6F9016D3-DC05-431B-88BD-1A2C6D61548B}"
-	ProjectSection(SolutionItems) = preProject
-		Pipelines\CI-Develop-Pipeline.yaml = Pipelines\CI-Develop-Pipeline.yaml
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{E14D1F01-8D44-4E08-95E7-DAAF18888586}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
