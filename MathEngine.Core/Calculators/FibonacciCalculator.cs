@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MathEngine.Core.Calculators
 {
     internal class FibonacciCalculator : ISequenceCalculator
     {
-        public IEnumerable<long> Calculate(long upperLimit)
+        public IEnumerable<double> Calculate(double upperLimit)
         {
-            var values = new long[] { 0, 1, 1 };
+            var values = new double[] { 0, 1, 1 };
 
-            if (upperLimit>=0)
+            if (upperLimit >= 0)
                 yield return values[0];
             if (upperLimit >= 1)
                 yield return values[1];

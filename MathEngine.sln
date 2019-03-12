@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.438
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28701.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathEngine.Core", "MathEngine.Core\MathEngine.Core.csproj", "{D453A97D-0D8D-433B-8B34-050EDBE07D76}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathEngine.Test", "MathEngine.Test\MathEngine.Test.csproj", "{969B3FE0-4371-44F2-8292-C83AADF7F50A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{E14D1F01-8D44-4E08-95E7-DAAF18888586}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathEngine.Console", "MathEngine.Console\MathEngine.Console.csproj", "{DB1E70EA-2BBB-49BA-8A07-3CB54ECE496B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{969B3FE0-4371-44F2-8292-C83AADF7F50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{969B3FE0-4371-44F2-8292-C83AADF7F50A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{969B3FE0-4371-44F2-8292-C83AADF7F50A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB1E70EA-2BBB-49BA-8A07-3CB54ECE496B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB1E70EA-2BBB-49BA-8A07-3CB54ECE496B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB1E70EA-2BBB-49BA-8A07-3CB54ECE496B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB1E70EA-2BBB-49BA-8A07-3CB54ECE496B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

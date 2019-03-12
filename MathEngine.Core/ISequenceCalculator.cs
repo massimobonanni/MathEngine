@@ -7,7 +7,7 @@ namespace MathEngine.Core
 {
     public interface ISequenceCalculator
     {
-        IEnumerable<long> Calculate(long upperLimit);
+        IEnumerable<double> Calculate(double upperLimit);
     }
 
 }
