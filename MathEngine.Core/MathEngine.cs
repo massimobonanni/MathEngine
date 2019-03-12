@@ -9,6 +9,7 @@ namespace MathEngine.Core
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException(nameof(name));
+            
             switch (name.ToLower())
             {
                 case "fibonacci":
@@ -16,6 +17,7 @@ namespace MathEngine.Core
                 default:
                     return null;
             }
+          
         }
     }
 }
