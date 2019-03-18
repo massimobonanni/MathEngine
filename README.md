@@ -4,7 +4,9 @@
 
 [![Build Status](https://massimobonanni.visualstudio.com/MathEngine/_apis/build/status/MathEngine-CI?branchName=develop)](https://massimobonanni.visualstudio.com/MathEngine/_build/latest?definitionId=22&branchName=develop)
 
-![Nuget](https://img.shields.io/nuget/v/MathEngine.svg)![Nuget](https://img.shields.io/nuget/dt/MathEngine.svg)
+![Nuget](https://img.shields.io/nuget/v/MathEngine.svg) ![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/MathEngine.svg) 
+
+![Nuget](https://img.shields.io/nuget/dt/MathEngine.svg)
 
 ---
 **Math Engine** is a demo used to show how you can leverage the power on Azure Pipeline in your GitHub repo.
