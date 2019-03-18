@@ -9,15 +9,17 @@ namespace MathEngine.Core
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException(nameof(name));
-            
+
             switch (name.ToLower())
             {
                 case "fibonacci":
                     return new FibonacciCalculator();
+                case "primes":
+                    return new PrimeNumbersCalculator();
                 default:
                     return null;
             }
-          
+
         }
     }
 }

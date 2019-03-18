@@ -31,6 +31,7 @@ namespace MathEngine.Test
             new List<object[]>
             {
                 new object[] {"fibonacci",typeof(FibonacciCalculator)},
+                new object[] {"primes",typeof(PrimeNumbersCalculator)},
                 new object[] {"unknown",null},
             };
 

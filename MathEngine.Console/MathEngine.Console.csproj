@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Options\PrimeNumbersOptions.cs" />
     <Compile Include="Options\FibonacciOptions.cs" />
     <Compile Include="Options\SequenceOptions.cs" />
     <Compile Include="Program.cs" />

@@ -13,7 +13,7 @@ namespace MathEngine.Console
 
     class Program
     {
-        private static Type[] options = new[] { typeof(FibonacciOptions) };
+        private static Type[] options = new[] { typeof(FibonacciOptions), typeof(PrimeNumbersOptions) };
 
 
         static int Main(string[] args)
