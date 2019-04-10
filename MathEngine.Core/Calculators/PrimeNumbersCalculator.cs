@@ -7,6 +7,8 @@ namespace MathEngine.Core.Calculators
 {
     public class PrimeNumbersCalculator : ISequenceCalculator
     {
+        public string Name => "primenumbers";
+
         public IEnumerable<double> Calculate(double upperLimit)
         {
             var values = new List<double>();

@@ -4,6 +4,8 @@ namespace MathEngine.Core.Calculators
 {
     internal class FibonacciCalculator : ISequenceCalculator
     {
+        public string Name => "fibonacci";
+
         public IEnumerable<double> Calculate(double upperLimit)
         {
             var values = new double[] { 0, 1, 1 };

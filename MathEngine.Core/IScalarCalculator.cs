@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MathEngine.Core
 {
-    public interface IScalarCalculator
+    public interface IScalarCalculator: ICalculator
     {
         double Calculate(double arg);
     }

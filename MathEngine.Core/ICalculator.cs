@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace MathEngine.Core
 {
-    public interface ISequenceCalculator : ICalculator
+    public interface ICalculator
     {
-        IEnumerable<double> Calculate(double upperLimit);
+        string Name { get; }
     }
-
 }
