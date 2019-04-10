@@ -13,13 +13,13 @@ namespace MathEngine.Console
 
     class Program
     {
-        private static Type[] options = new[] { typeof(FibonacciOptions), typeof(PrimeNumbersOptions) };
+        private static Type[] options = new[] { typeof(FibonacciOptions), typeof(PrimeNumbersOptions), typeof(PerfectNumbersOptions) };
 
 
         static int Main(string[] args)
         {
             var result = Parser.Default.ParseArguments(args, options)
-            .MapResult(o => ExecuteCommand(o), errs => 1);
+                .MapResult(o => ExecuteCommand(o), errs => 1);
 
             if (Debugger.IsAttached)
                 System.Console.ReadLine();

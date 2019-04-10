@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MathEngine.Console.Options
 {
-    [Verb("primes", HelpText = "Calculate the prime numbers sequence")]
+    [Verb("primenumbers", HelpText = "Calculate the prime numbers sequence")]
     internal class PrimeNumbersOptions : SequenceOptions
     {
-        public override string CalculatorName => "primes";
+        public override string CalculatorName => "primenumbers";
     }
 }

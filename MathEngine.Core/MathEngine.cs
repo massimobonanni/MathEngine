@@ -8,8 +8,8 @@ namespace MathEngine.Core
     public static class MathEngine
     {
         private static IEnumerable<ISequenceCalculator> sequenceCalculators =
-            new List<ISequenceCalculator>() { new FibonacciCalculator(), 
-                new PrimeNumbersCalculator() };
+            new List<ISequenceCalculator>() { new FibonacciCalculator(),
+                new PrimeNumbersCalculator(), new PerfectNumbersCalculator() };
 
         public static ISequenceCalculator CreateSequenceCalculator(string name)
         {

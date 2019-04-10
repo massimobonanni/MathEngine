@@ -16,11 +16,11 @@ namespace MathEngine.Core.Calculators
             if (upperLimit >= 1)
                 yield return 1.0;
 
-            double currentValue = 2.0;
+            var currentValue = 2.0;
 
             while (values.Count() < upperLimit-1)
             {
-                if (!values.Any(i => currentValue / i == Math.Round(currentValue / i)))
+                if (!values.Any(i => currentValue % i == 0))
                 {
                     values.Add(currentValue);
                     yield return currentValue;

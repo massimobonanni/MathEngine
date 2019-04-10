@@ -24,10 +24,10 @@ namespace MathEngine.Test.Calculator
         {
             var target = new PerfectNumbersCalculator();
 
-            var actual = target.Calculate(upperLimit);
+            var actual = target.Calculate(upperLimit).ToList();
 
             Assert.Equal(expectedSequence.Count(), actual.Count());
-            for (int i = 0; i < expectedSequence.Count(); i++)
+            for (var i = 0; i < expectedSequence.Count(); i++)
             {
                 Assert.Equal(expectedSequence[i], actual.ElementAt(i));
             }
