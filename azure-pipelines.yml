@@ -1,0 +1,126 @@
+pool:
+  name: Hosted VS2017
+  demands:
+  - msbuild
+  - visualstudio
+  - vstest
+
+jobs:
+- job:
+  steps:
+  - task: NuGetToolInstaller@0
+    displayName: 'Use NuGet 4.4.1'
+    inputs:
+    versionSpec: 4.4.1
+
+  - task: NuGetCommand@2
+    displayName: 'NuGet restore'
+    inputs:
+      restoreSolution: '$(Parameters.solution)'
+
+  - task: bleddynrichards.Assembly-Info-Task.Assembly-Info-NetCore.Assembly-Info-NetCore@2
+    displayName: 'Set Assembly Manifest Data'
+    inputs:
+      InsertAttributes: true
+      GeneratePackageOnBuild: true
+      PackageId: MathEngine
+      Authors: 'Massimo Bonanni'
+      Description: 'The best Math Engine in the world (it''s a joke, this is the demo of the session "Azure Pipeline for Githubbers").'
+      Copyright: 'Copyright © $(date:yyyy) Massimo Bonanni'
+      PackageLicenseUrl: 'https://github.com/massimobonanni/MathEngine/blob/develop/LICENSE'
+      PackageProjectUrl: 'https://github.com/massimobonanni/MathEngine'
+      RepositoryUrl: 'https://github.com/massimobonanni/MathEngine'
+      RepositoryType: GitHub
+      VersionNumber: '$(Build.BuildNumber)'
+      FileVersionNumber: '$(Build.BuildNumber)'
+      InformationalVersion: '$(Build.BuildNumber)'
+      PackageVersion: '$(Build.BuildNumber)'
+
+  - task: VSBuild@1
+    displayName: 'Build solution **\*.sln'
+    inputs:
+      solution: '$(Parameters.solution)'
+      platform: '$(BuildPlatform)'
+      configuration: '$(BuildConfiguration)'
+
+  - task: VSTest@2
+    displayName: 'VsTest - testAssemblies'
+    inputs:
+      testAssemblyVer2: |
+       **\$(BuildConfiguration)\**\*.Test.dll
+       !**\obj\**
+      platform: '$(BuildPlatform)'
+      configuration: '$(BuildConfiguration)'
+  
+  - task: PublishSymbols@2
+    displayName: 'Publish symbols path'
+    inputs:
+      SearchPattern: '**\bin\**\*.pdb'
+      PublishSymbols: false
+    enabled: false
+    continueOnError: true
+  
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+    inputs:
+      SourceFolder: '$(system.defaultworkingdirectory)'
+      Contents: |
+       **\bin\$(BuildConfiguration)\**
+       **\merge.bat
+       !**\*.Test\bin\$(BuildConfiguration)\**
+      TargetFolder: '$(build.artifactstagingdirectory)'
+  
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop'
+    inputs:
+      PathtoPublish: '$(build.artifactstagingdirectory)'
+
+- job:
+  dependsOn: Job_1
+  steps:
+  - task: NuGetToolInstaller@0
+    displayName: 'Use NuGet 4.4.1'
+    inputs:
+      versionSpec: 4.4.1
+  
+  - task: NuGetCommand@2
+    displayName: 'NuGet restore'
+  
+  - task: bleddynrichards.Assembly-Info-Task.Assembly-Info-NetCore.Assembly-Info-NetCore@2
+    displayName: 'Set Assembly Manifest Data Beta'
+    inputs:
+      InsertAttributes: true
+      GeneratePackageOnBuild: true
+      PackageId: MathEngine
+      Authors: 'Massimo Bonanni'
+      Description: 'The best Math Engine in the world (it''s a joke, this is the demo of the session "Azure Pipeline for Githubbers").'
+      Copyright: 'Copyright © $(date:yyyy) Massimo Bonanni'
+      PackageLicenseUrl: 'https://github.com/massimobonanni/MathEngine/blob/develop/LICENSE'
+      PackageProjectUrl: 'https://github.com/massimobonanni/MathEngine'
+      RepositoryUrl: 'https://github.com/massimobonanni/MathEngine'
+      RepositoryType: GitHub
+      VersionNumber: '$(Build.BuildNumber)'
+      FileVersionNumber: '$(Build.BuildNumber)'
+      InformationalVersion: '$(Build.BuildNumber)-beta'
+      PackageVersion: '$(Build.BuildNumber)-beta'
+  
+  - task: VSBuild@1
+    displayName: 'Build solution **\*.sln'
+    inputs:
+      solution: '$(Parameters.solution)'
+      platform: '$(BuildPlatform)'
+      configuration: '$(BuildConfiguration)'
+  
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: $(build.artifactstagingdirectory) beta'
+    inputs:
+      SourceFolder: '$(system.defaultworkingdirectory)'
+      Contents: |
+       **\bin\$(BuildConfiguration)\**
+       !**\*.Test\bin\$(BuildConfiguration)\**
+      TargetFolder: '$(build.artifactstagingdirectory)\beta'
+  
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop beta'
+    inputs:
+      PathtoPublish: '$(build.artifactstagingdirectory)'
