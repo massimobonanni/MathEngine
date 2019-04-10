@@ -11,7 +11,7 @@
 ---
 **Math Engine** is a demo used to show how you can leverage the power on Azure Pipeline in your GitHub repo.
 
-It implements a simple Math engine that allows you to calculate famous sequence of numbers (e.g. Fibonacci or prime numbers) or to evaluate scalar algorithms.
+It implements a simple math engine that allows you to calculate famous sequence of numbers (e.g. Fibonacci or prime numbers) or to evaluate scalar algorithms.
 
 The `MathEngine` class is the factory class you can use to retrieve e specific calculator:
 
