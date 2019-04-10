@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathEngine.Console", "MathE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pipelines", "Pipelines", "{EF8E2D76-F899-47A0-996D-1E2978B97489}"
 	ProjectSection(SolutionItems) = preProject
-		Build.yaml = Build.yaml
+		Pipelines\Build.yaml = Pipelines\Build.yaml
 	EndProjectSection
 EndProject
 Global
