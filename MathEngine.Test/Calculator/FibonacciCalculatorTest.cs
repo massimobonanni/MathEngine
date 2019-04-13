@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace MathEngine.Test.Calculator
@@ -22,12 +23,15 @@ namespace MathEngine.Test.Calculator
 
         [Theory]
         [MemberData(nameof(FibonacciSequences))]
-        public void Calculate_ArgumentRight(long upperLimit, long[] expectedSequence)
+        public async Task Calculate_ArgumentRight(long upperLimit, long[] expectedSequence)
         {
             var target = new FibonacciCalculator();
 
-            var actual = target.Calculate(upperLimit);
-
+            var actual = await TestHelper.ExecuteTestWithTimeout<IEnumerable<double>>(
+               () => target.Calculate(upperLimit).ToList(),
+               10000,
+               "Test failed because timeout elapsed");
+            
             Assert.Equal(expectedSequence.Count(), actual.Count());
             for (int i = 0; i < expectedSequence.Count(); i++)
             {
