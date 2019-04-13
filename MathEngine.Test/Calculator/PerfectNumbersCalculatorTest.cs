@@ -17,7 +17,9 @@ namespace MathEngine.Test.Calculator
                 new object[] {2,new double[] { 6,28} },
                 new object[] {3,new double[] { 6,28,496} },
                 new object[] {4,new double[] { 6,28,496,8128} },
-                 new object[] {5,new double[] { 6,28,496,8128, 33550336 } },
+                new object[] {5,new double[] { 6,28,496,8128, 33550336 } },
+                new object[] {6,new double[] { 6,28,496,8128, 33550336 , 8589869056} },
+                new object[] {7,new double[] { 6,28,496,8128, 33550336 , 8589869056, 137438691328} },
             };
 
         [Theory]
@@ -28,7 +30,7 @@ namespace MathEngine.Test.Calculator
 
             var actual = await TestHelper.ExecuteTestWithTimeout<IEnumerable<double>>(
                 () => target.Calculate(upperLimit).ToList(),
-                10000,
+                5000,
                 "Test failed because timeout elapsed");
 
             Assert.Equal(expectedSequence.Count(), actual.Count());
@@ -38,6 +40,6 @@ namespace MathEngine.Test.Calculator
             }
         }
 
-       
+
     }
 }

@@ -29,7 +29,7 @@ namespace MathEngine.Test.Calculator
 
             var actual = await TestHelper.ExecuteTestWithTimeout<IEnumerable<double>>(
                () => target.Calculate(upperLimit).ToList(),
-               10000,
+               5000,
                "Test failed because timeout elapsed");
             
             Assert.Equal(expectedSequence.Count(), actual.Count());
