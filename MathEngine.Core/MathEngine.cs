@@ -9,7 +9,7 @@ namespace MathEngine.Core
     {
         private static IEnumerable<ISequenceCalculator> sequenceCalculators =
             new List<ISequenceCalculator>() { new FibonacciCalculator(),
-                new PrimeNumbersCalculator(), new PerfectNumbersCalculator() };
+                new PrimeNumbersCalculator() }; //, new PerfectNumbersCalculator() };
 
         public static ISequenceCalculator CreateSequenceCalculator(string name)
         {
