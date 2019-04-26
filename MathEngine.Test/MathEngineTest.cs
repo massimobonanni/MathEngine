@@ -32,7 +32,7 @@ namespace MathEngine.Test
             {
                 new object[] {"fibonacci",typeof(FibonacciCalculator)},
                 new object[] {"primenumbers",typeof(PrimeNumbersCalculator)},
-                new object[] { "perfectnumbers", typeof(PerfectNumbersCalculator)},
+                //new object[] { "perfectnumbers", typeof(PerfectNumbersCalculator)},
                 new object[] {"unknown",null},
             };
 
