@@ -18,7 +18,7 @@ namespace MathEngine.Core.Calculators
 
             var currentValue = 2.0;
 
-            while (values.Count() < upperLimit-1)
+            while (values.Count < upperLimit-1)
             {
                 if (!values.Any(i => currentValue % i == 0))
                 {

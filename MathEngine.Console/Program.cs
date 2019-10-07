@@ -13,6 +13,11 @@ namespace MathEngine.Console
 
     class Program
     {
+        protected Program()
+        {
+
+        }
+
         private static Type[] options = new[] { typeof(FibonacciOptions), typeof(PrimeNumbersOptions), typeof(PerfectNumbersOptions) };
 
 
